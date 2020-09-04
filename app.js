@@ -1,13 +1,13 @@
-var express     =require('F:/node/NPMfiles/node_modules/express'),
-methodOverride  =require('F:/node/NPMfiles/node_modules/method-override'),
+var express     =require('express'),
+methodOverride  =require('method-override'),
     app         =express(),
-    mongoose    =require('F:/node/NPMfiles/node_modules/mongoose');
+    mongoose    =require('mongoose');
 
 
 app.set("view engine","ejs");
 
 app.use('/static', express.static('public'));
-var BodyParser=require('F:/node/NPMfiles/node_modules/body-parser');
+var BodyParser=require('body-parser');
 
 app.use(BodyParser.urlencoded( { extended:true },{useNewUrlParser: true, useUnifiedTopology: true} ,));
 mongoose.connect("mongodb://localhost/tinio", {useNewUrlParser: true, useUnifiedTopology: true});
