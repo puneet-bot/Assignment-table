@@ -5,7 +5,7 @@ methodOverride  =require('method-override'),
 
     // change the db according to your database
 
-    const db = "mongodb://localhost/tinio"
+    const db = "mongodb+srv://admin:student@cluster0.at7i2.mongodb.net/<dbname>?retryWrites=true&w=majority"
 
 
 app.set("view engine","ejs");
