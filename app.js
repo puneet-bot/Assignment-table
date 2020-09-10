@@ -3,6 +3,10 @@ methodOverride  =require('method-override'),
     app         =express(),
     mongoose    =require('mongoose');
 
+    // change the db according to your database
+
+    const db = "mongodb://localhost/tinio"
+
 
 app.set("view engine","ejs");
 
@@ -10,7 +14,7 @@ app.use('/static', express.static('public'));
 var BodyParser=require('body-parser');
 
 app.use(BodyParser.urlencoded( { extended:true },{useNewUrlParser: true, useUnifiedTopology: true} ,));
-mongoose.connect("mongodb://localhost/tinio", {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(db, {useNewUrlParser: true, useUnifiedTopology: true});
 app.use(methodOverride("_method"));
 
 // mongoose.connect("");
